@@ -10,7 +10,7 @@ name: build master
 
 on:
   pull_request:
-    branches: [ "main","development" ]
+    branches: ["main"]
 
 jobs:
   build:
