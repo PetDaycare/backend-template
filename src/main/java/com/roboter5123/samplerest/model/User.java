@@ -1,4 +1,7 @@
 package com.roboter5123.samplerest.model;
+import com.roboter5123.samplerest.exception.IfThisIsThrownThenThereIsSomethingExtremelyWrongAndYouShouldConsultGodOnYourFurtherCourseOfActionException;
+import com.roboter5123.samplerest.model.dto.UserDTO;
+import com.roboter5123.samplerest.repository.UserRepository;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -24,18 +27,13 @@ public class User {
     @Id
     @GeneratedValue
     private Long userId;
-
     @Email
     private String eMail;
-
     @NotEmpty
     private String hashedPassword;
-
     @NotEmpty
     private byte[] salt;
-
     private Boolean activated;
-
     @OneToMany(mappedBy = "user")
     private List<LoginSession> loginSessions;
 
@@ -58,7 +56,32 @@ public class User {
 
         } catch (NoSuchAlgorithmException e) {
 
-            throw new RuntimeException(e);
+            throw new IfThisIsThrownThenThereIsSomethingExtremelyWrongAndYouShouldConsultGodOnYourFurtherCourseOfActionException("God Help Me");
         }
+    }
+
+    public User patch(UserDTO userDTO, UserRepository repository) {
+
+        if (repository.findByeMail(userDTO.getEMail()) != null){
+
+            userDTO.setEMail(null);
+        }
+
+        if (userDTO.getEMail() != null) {
+
+            this.eMail = userDTO.getEMail();
+        }
+
+        if (userDTO.getActivated()!= null){
+
+            this.activated = userDTO.getActivated();
+        }
+
+        if (userDTO.getPassword() != null){
+
+            this.hashPassword(userDTO.getPassword());
+        }
+
+        return this;
     }
 }
