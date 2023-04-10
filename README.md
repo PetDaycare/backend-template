@@ -1,9 +1,5 @@
-### About 
 
-A Template for creating services in Pet Daycare
-
-
-### Reference Documentation for Spring
+### Reference Documentation
 
 For further reference, please consider the following sections:
 
