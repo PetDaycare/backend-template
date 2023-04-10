@@ -54,12 +54,11 @@ public class LoginSessionResource {
         }
 
         return assembler.toModel(loginSession);
-
     }
 
     @PostMapping("/loginsessions")
     @ResponseStatus(HttpStatus.CREATED)
-    public void postOne(@RequestBody @Valid LoginDTO loginDTO, HttpServletResponse response){
+    public EntityModel<LoginSessionDTO> postOne(@RequestBody @Valid LoginDTO loginDTO, HttpServletResponse response){
 
         User user = userRepository.findByeMail(loginDTO.getEMail());
 
@@ -80,5 +79,21 @@ public class LoginSessionResource {
         Cookie cookie = new Cookie("accesToken", loginSession.getLoginToken());
         cookie.setMaxAge(loginSession.getExpires().compareTo(LocalDateTime.now())*24*60*60);
         response.addCookie(cookie);
+
+        return assembler.toModel(loginSession);
+    }
+
+    @DeleteMapping("/loginsessions")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void deleteOne(@RequestBody @Valid LoginSessionDTO sessionDTO){
+
+        LoginSession session = loginSessionRepository.findByLoginToken(sessionDTO.getLoginToken());
+
+        if (session == null){
+
+            throw new NoSuchSessionExistsException("No such session exists");
+        }
+
+        loginSessionRepository.deleteByLoginToken(session.getLoginToken());
     }
 }
