@@ -2,14 +2,12 @@ package com.roboter5123.samplerest.model;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
+import java.security.SecureRandom;
 import java.time.LocalDateTime;
+import java.util.Base64;
 
-@NoArgsConstructor
-@RequiredArgsConstructor
 @Setter
 @Getter
 @Entity
@@ -29,4 +27,13 @@ public class LoginSession {
 
     @NotNull
     private LocalDateTime createdOn;
+
+    public LoginSession() {
+
+        this.createdOn = LocalDateTime.now();
+        this.expires = LocalDateTime.now().plusDays(7);
+        byte[] tokenBytes = new byte[64];
+        new SecureRandom().nextBytes(tokenBytes);
+        this.loginToken = Base64.getEncoder().encodeToString(tokenBytes);
+    }
 }

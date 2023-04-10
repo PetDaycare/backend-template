@@ -84,4 +84,19 @@ public class User {
 
         return this;
     }
+
+    public boolean checkPassword(String password) {
+
+        try {
+
+            MessageDigest md = MessageDigest.getInstance("SHA-512");
+            md.update(this.salt);
+            return this.hashedPassword.equals(new String(md.digest(password.getBytes(StandardCharsets.UTF_8)), StandardCharsets.UTF_8));
+
+        } catch (NoSuchAlgorithmException e) {
+
+            throw new IfThisIsThrownThenThereIsSomethingExtremelyWrongAndYouShouldConsultGodOnYourFurtherCourseOfActionException("God Help Me");
+        }
+
+    }
 }

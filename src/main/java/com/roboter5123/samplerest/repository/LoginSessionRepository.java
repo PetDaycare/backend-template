@@ -4,4 +4,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface LoginSessionRepository extends JpaRepository<LoginSession, String> {
 
+    long deleteByLoginToken(String loginToken);
+
+    LoginSession findByLoginToken(String loginToken);
+
 }
