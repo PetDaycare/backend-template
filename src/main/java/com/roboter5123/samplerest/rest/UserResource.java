@@ -3,8 +3,9 @@ import com.roboter5123.samplerest.exception.GenericConflictException;
 import com.roboter5123.samplerest.exception.NoSuchUserExistsException;
 import com.roboter5123.samplerest.exception.UserIsNotActivatedException;
 import com.roboter5123.samplerest.model.User;
+import com.roboter5123.samplerest.model.dto.IncomingUserDTO;
 import com.roboter5123.samplerest.model.dto.LoginDTO;
-import com.roboter5123.samplerest.model.dto.UserDTO;
+import com.roboter5123.samplerest.model.dto.OutgoingUserDTO;
 import com.roboter5123.samplerest.repository.UserRepository;
 import com.roboter5123.samplerest.rest.assembler.UserDTOAssembler;
 import jakarta.validation.Valid;
@@ -33,7 +34,7 @@ public class UserResource {
    @GetMapping(path = "/users")
    @ResponseBody
    @ResponseStatus(HttpStatus.OK)
-    public List<EntityModel<UserDTO>> getAll(){
+    public List<EntityModel<OutgoingUserDTO>> getAll(){
 
        return repository.findAll().stream().map(assembler::toModel).toList();
     }
@@ -41,7 +42,7 @@ public class UserResource {
     @GetMapping(path = "/users/{userId}")
     @ResponseBody
     @ResponseStatus(HttpStatus.OK)
-    public EntityModel<UserDTO> getOne(@PathVariable Long userId) {
+    public EntityModel<OutgoingUserDTO> getOne(@PathVariable Long userId) {
 
         try {
 
@@ -56,15 +57,15 @@ public class UserResource {
 
     @PostMapping(path = "/users")
     @ResponseStatus(HttpStatus.CREATED)
-    public EntityModel<UserDTO> postOne(@RequestBody @Valid LoginDTO newUser){
+    public EntityModel<OutgoingUserDTO> postOne(@RequestBody @Valid LoginDTO newUser){
 
-        if (repository.findByeMail(newUser.getEMail()) != null){
+        if (repository.findByeMail(newUser.getEmail()) != null){
 
             throw new GenericConflictException();
         }
 
         @Valid
-        User user = new User(newUser.getEMail(), newUser.getPassword());
+        User user = new User(newUser.getEmail(), newUser.getPassword());
         user.setActivated(Boolean.FALSE);
         user = repository.save(user);
 
@@ -95,7 +96,7 @@ public class UserResource {
 
     @PatchMapping(path = "/users/{userId}")
     @ResponseStatus(HttpStatus.OK)
-    public EntityModel<UserDTO> patchOne(@PathVariable Long userId,  @RequestBody UserDTO userDTO){
+    public EntityModel<OutgoingUserDTO> patchOne(@PathVariable Long userId, @RequestBody IncomingUserDTO userDTO){
 
         User user = repository.findByUserId(userId);
 

@@ -1,4 +1,5 @@
 package com.roboter5123.samplerest.model.dto;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotEmpty;
 import lombok.Data;
@@ -9,8 +10,10 @@ import lombok.NoArgsConstructor;
 public class LoginDTO {
 
     @Email
-    private String eMail;
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY, value = "email")
+    private String email;
 
     @NotEmpty
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private String password;
 }

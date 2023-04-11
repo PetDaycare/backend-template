@@ -60,7 +60,7 @@ public class LoginSessionResource {
     @ResponseStatus(HttpStatus.CREATED)
     public EntityModel<LoginSessionDTO> postOne(@RequestBody @Valid LoginDTO loginDTO, HttpServletResponse response){
 
-        User user = userRepository.findByeMail(loginDTO.getEMail());
+        User user = userRepository.findByeMail(loginDTO.getEmail());
 
         if (user == null){
 
