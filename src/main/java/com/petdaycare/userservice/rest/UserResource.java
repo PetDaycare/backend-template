@@ -1,13 +1,13 @@
-package com.roboter5123.samplerest.rest;
-import com.roboter5123.samplerest.exception.GenericConflictException;
-import com.roboter5123.samplerest.exception.NoSuchUserExistsException;
-import com.roboter5123.samplerest.exception.UserIsNotActivatedException;
-import com.roboter5123.samplerest.model.User;
-import com.roboter5123.samplerest.model.dto.IncomingUserDTO;
-import com.roboter5123.samplerest.model.dto.LoginDTO;
-import com.roboter5123.samplerest.model.dto.OutgoingUserDTO;
-import com.roboter5123.samplerest.repository.UserRepository;
-import com.roboter5123.samplerest.rest.assembler.UserDTOAssembler;
+package com.petdaycare.userservice.rest;
+import com.petdaycare.userservice.exception.GenericConflictException;
+import com.petdaycare.userservice.exception.NoSuchUserExistsException;
+import com.petdaycare.userservice.exception.UserIsNotActivatedException;
+import com.petdaycare.userservice.model.User;
+import com.petdaycare.userservice.model.dto.IncomingUserDTO;
+import com.petdaycare.userservice.model.dto.OutgoingUserDTO;
+import com.petdaycare.userservice.repository.UserRepository;
+import com.petdaycare.userservice.rest.assembler.UserDTOAssembler;
+import com.petdaycare.userservice.model.dto.LoginDTO;
 import jakarta.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;

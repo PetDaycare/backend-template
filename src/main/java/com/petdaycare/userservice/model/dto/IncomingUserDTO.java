@@ -1,4 +1,4 @@
-package com.roboter5123.samplerest.model.dto;
+package com.petdaycare.userservice.model.dto;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.validation.constraints.Email;
 import lombok.Data;

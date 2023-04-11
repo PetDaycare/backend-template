@@ -1,8 +1,8 @@
-package com.roboter5123.samplerest.model;
+package com.petdaycare.userservice.model;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.roboter5123.samplerest.exception.IfThisIsThrownThenThereIsSomethingExtremelyWrongAndYouShouldConsultGodOnYourFurtherCourseOfActionException;
-import com.roboter5123.samplerest.model.dto.IncomingUserDTO;
-import com.roboter5123.samplerest.repository.UserRepository;
+import com.petdaycare.userservice.exception.IfThisIsThrownThenThereIsSomethingExtremelyWrongAndYouShouldConsultGodOnYourFurtherCourseOfActionException;
+import com.petdaycare.userservice.model.dto.IncomingUserDTO;
+import com.petdaycare.userservice.repository.UserRepository;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;

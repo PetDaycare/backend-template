@@ -1,5 +1,5 @@
-package com.roboter5123.samplerest.repository;
-import com.roboter5123.samplerest.model.LoginSession;
+package com.petdaycare.userservice.repository;
+import com.petdaycare.userservice.model.LoginSession;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface LoginSessionRepository extends JpaRepository<LoginSession, String> {

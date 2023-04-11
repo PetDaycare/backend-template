@@ -1,4 +1,4 @@
-package com.roboter5123.samplerest.model;
+package com.petdaycare.userservice.model;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.Getter;

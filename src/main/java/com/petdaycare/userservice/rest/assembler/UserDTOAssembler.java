@@ -1,7 +1,7 @@
-package com.roboter5123.samplerest.rest.assembler;
-import com.roboter5123.samplerest.model.User;
-import com.roboter5123.samplerest.model.dto.OutgoingUserDTO;
-import com.roboter5123.samplerest.rest.UserResource;
+package com.petdaycare.userservice.rest.assembler;
+import com.petdaycare.userservice.model.User;
+import com.petdaycare.userservice.model.dto.OutgoingUserDTO;
+import com.petdaycare.userservice.rest.UserResource;
 import org.springframework.hateoas.EntityModel;
 import org.springframework.hateoas.server.RepresentationModelAssembler;
 import org.springframework.stereotype.Component;
