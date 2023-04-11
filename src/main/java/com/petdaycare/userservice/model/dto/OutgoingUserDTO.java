@@ -21,7 +21,7 @@ public class OutgoingUserDTO {
 
     public OutgoingUserDTO(User user) {
 
-        this.userId = user.getUserId();
+        this.userId = user.getId();
         this.email = user.getEMail();
         this.activated= user.getActivated();
     }

@@ -15,7 +15,7 @@ public class LoginSessionDTOAssembler implements RepresentationModelAssembler<Lo
     @Override
     public EntityModel<LoginSessionDTO> toModel(LoginSession session) {
 
-        LoginSessionDTO sessionDTO = new LoginSessionDTO(session);
+        LoginSessionDTO sessionDTO = new LoginSessionDTO();
         return EntityModel.of(sessionDTO,
                 linkTo(methodOn(LoginSessionResource.class).getOne(sessionDTO)).withSelfRel());
     }

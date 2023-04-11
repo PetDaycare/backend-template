@@ -28,7 +28,7 @@ public class User {
     @Id
     @GeneratedValue
     @JsonProperty(value = "user_id")
-    private Long userId;
+    private Long id;
     @Email
     @JsonProperty(value = "email")
     private String eMail;

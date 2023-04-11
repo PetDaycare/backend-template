@@ -12,12 +12,11 @@ public class LoginSessionDTO {
 
     @NotNull
     private String loginToken;
-
     @NotNull
     @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private Long userId;
-
     @NotNull
     @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private LocalDateTime expires;
+}
 
