@@ -1,6 +1,6 @@
 ### About 
 
-This is the backend service for accessing users and their login sessions.
+A Template for creating services in Pet Daycare
 
 
 ### Reference Documentation for Spring

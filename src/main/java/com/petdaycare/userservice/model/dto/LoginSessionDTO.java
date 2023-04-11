@@ -21,5 +21,3 @@ public class LoginSessionDTO {
     @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private LocalDateTime expires;
 
-
-}
