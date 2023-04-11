@@ -4,19 +4,12 @@
     <option name="ALTERNATIVE_JRE_PATH" value="corretto-17" />
     <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
     <envs>
-<<<<<<< HEAD
       <env name="database_url" value="jdbc:mariadb://roboter5123.com:3306/petdaycare_userservice" />
       <env name="database_user" value="root" />
       <env name="database_password" value="" />
     </envs>
     <module name="User-service" />
     <option name="SPRING_BOOT_MAIN_CLASS" value="com.petdaycare.userservice.SampleRestApplication" />
-=======
-      <env name="database_url" value="jdbc:mariadb://roboter5123.com:3306" />
-    </envs>
-    <module name="app" />
-    <option name="SPRING_BOOT_MAIN_CLASS" value="com.roboter5123.samplerest.SampleRestApplication" />
->>>>>>> 3c96c99 (Add files via upload)
     <option name="VM_PARAMETERS" value="-Djasypt.encryptor.password=" />
     <method v="2">
       <option name="Make" enabled="true" />
@@ -29,7 +22,7 @@
       <env name="database_user" value="root" />
       <env name="database_password" value="" />
     </envs>
-    <module name="backend-template" />
+    <module name="User-service" />
     <option name="SPRING_BOOT_MAIN_CLASS" value="com.petdaycare.userservice.SampleRestApplication" />
     <method v="2">
       <option name="Make" enabled="true" />
