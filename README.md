@@ -1,5 +1,9 @@
+###About 
 
-### Reference Documentation
+This is the backend service for accessing users and their login sessions.
+
+
+### Reference Documentation for Spring
 
 For further reference, please consider the following sections:
 
