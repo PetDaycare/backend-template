@@ -18,12 +18,21 @@
   <configuration default="false" name="SampleRestApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
     <option name="ACTIVE_PROFILES" />
     <envs>
+      <env name="accesskey" value="" />
+      <env name="database_password" value="" />
       <env name="database_url" value="jdbc:mariadb://roboter5123.com:3306/" />
       <env name="database_user" value="" />
-      <env name="database_password" value="" />
+      <env name="region" value="" />
+      <env name="secretkey" value="" />
     </envs>
-    <module name="backend-template" />
+    <module name="backend_template" />
+    <option name="SHORTEN_COMMAND_LINE" value="ARGS_FILE" />
     <option name="SPRING_BOOT_MAIN_CLASS" value="com.petdaycare.userservice.SampleRestApplication" />
+    <extension name="software.aws.toolkits.jetbrains.core.execution.JavaAwsConnectionExtension">
+      <option name="credential" value="profile:roboter5123" />
+      <option name="region" value="eu-central-1" />
+      <option name="useCurrentConnection" value="false" />
+    </extension>
     <method v="2">
       <option name="Make" enabled="true" />
     </method>
