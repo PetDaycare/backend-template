@@ -9,7 +9,7 @@
       <env name="database_password" value="" />
     </envs>
     <module name="User-service" />
-    <option name="SPRING_BOOT_MAIN_CLASS" value="com.petdaycare.userservice.SampleRestApplication" />
+    <option name="SPRING_BOOT_MAIN_CLASS" value="com.petdaycare.service.SampleRestApplication" />
     <option name="VM_PARAMETERS" value="-Djasypt.encryptor.password=" />
     <method v="2">
       <option name="Make" enabled="true" />
@@ -27,7 +27,7 @@
     </envs>
     <module name="backend_template" />
     <option name="SHORTEN_COMMAND_LINE" value="ARGS_FILE" />
-    <option name="SPRING_BOOT_MAIN_CLASS" value="com.petdaycare.userservice.SampleRestApplication" />
+    <option name="SPRING_BOOT_MAIN_CLASS" value="com.petdaycare.service.SampleRestApplication" />
     <extension name="software.aws.toolkits.jetbrains.core.execution.JavaAwsConnectionExtension">
       <option name="credential" value="profile:roboter5123" />
       <option name="region" value="eu-central-1" />
