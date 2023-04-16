@@ -1,4 +1,4 @@
-package com.petdaycare.userservice.awscognito;
+package com.petdaycare.service.aws;
 import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.AWSCredentialsProvider;
 import com.amazonaws.auth.AWSStaticCredentialsProvider;

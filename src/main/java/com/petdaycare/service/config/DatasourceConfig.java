@@ -1,4 +1,4 @@
-package com.petdaycare.userservice.config;
+package com.petdaycare.service.config;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.Bean;

@@ -1,9 +1,9 @@
-package com.petdaycare.userservice.exception;
+package com.petdaycare.service.exception;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
-@ResponseStatus(HttpStatus.I_AM_A_TEAPOT)
-public class IfThisIsThrownThenThereIsSomethingExtremelyWrongAndYouShouldConsultGodOnYourFurtherCourseOfActionException extends RuntimeException {
+@ResponseStatus(HttpStatus.GONE)
+public class NoSuchSessionExistsException extends RuntimeException {
 
     /**
      * Constructs a new runtime exception with the specified detail message.
@@ -13,7 +13,7 @@ public class IfThisIsThrownThenThereIsSomethingExtremelyWrongAndYouShouldConsult
      * @param message the detail message. The detail message is saved for
      *                later retrieval by the {@link #getMessage()} method.
      */
-    public IfThisIsThrownThenThereIsSomethingExtremelyWrongAndYouShouldConsultGodOnYourFurtherCourseOfActionException(String message) {
+    public NoSuchSessionExistsException(String message) {
 
         super(message);
     }
